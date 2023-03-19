@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-
-import { MapContainer } from "../../components/MapContainer/MapContainer";
+import { MapContainer } from "@/components";
 
 export type CoordsType = {
   lat: number;
   lng: number;
 };
 
-export default function Map() {
+const Map = () => {
   const [latLng, setLatLng] = useState<CoordsType | null>(null);
   const [zoom, setZoom] = useState(12);
   const { query } = useRouter();
@@ -35,4 +34,6 @@ export default function Map() {
       <MapContainer coords={latLng} zoom={zoom} forceTriggerQuery />
     </div>
   );
-}
+};
+
+export default Map;

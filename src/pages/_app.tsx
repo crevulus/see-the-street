@@ -5,6 +5,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { firebaseApp } from "../firebase";
 import { useEffect } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { BottomNav } from "@/components";
 
 const auth = getAuth(firebaseApp);
 
@@ -18,5 +19,10 @@ export default function App({ Component, pageProps }: AppProps) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Component {...pageProps} />
+      <BottomNav />
+    </>
+  );
 }

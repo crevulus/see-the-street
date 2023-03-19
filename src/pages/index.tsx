@@ -6,7 +6,7 @@ import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 const auth = getAuth(firebaseApp);
 
 export default function Home() {
-  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+  const [signInWithGoogle] = useSignInWithGoogle(auth);
 
   return (
     <>
@@ -17,7 +17,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <button className="btn" onClick={() => signInWithGoogle()}>Sign in with Google</button>
+        <button className="btn" onClick={() => signInWithGoogle()}>
+          Sign in with Google
+        </button>
       </main>
     </>
   );

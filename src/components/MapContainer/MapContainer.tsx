@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-// import { useNavigate } from "react-router-dom";
 import { Loader } from "@googlemaps/js-api-loader";
 import * as geofire from "geofire-common";
 import debounce from "lodash.debounce";
@@ -16,10 +15,9 @@ import {
 } from "firebase/firestore";
 
 import { firebaseApp } from "../../firebase";
-import { createMapButton, createMarker } from "../../utils/mapUtils";
+import { createMarker } from "../../utils/mapUtils";
 import { useErrorStore, useGeographicStore } from "../../data/store";
 import { CoordsType } from "../../pages/map";
-import { NavigationRoutes } from "../../data/enums";
 
 type MapContainerProps = {
   coords: CoordsType | null;
