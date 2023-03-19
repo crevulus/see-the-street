@@ -17,7 +17,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <button className="btn" onClick={() => signInWithGoogle()}>Sign in</button>
+        <button className="btn" onClick={() => signInWithGoogle()}>Sign in with Google</button>
       </main>
     </>
   );
