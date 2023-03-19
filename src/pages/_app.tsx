@@ -1,4 +1,4 @@
-import "@/styles/globals.css";
+import "@/styles/globals.css"; // need to keep this in for daisyui to work
 import type { AppProps } from "next/app";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 

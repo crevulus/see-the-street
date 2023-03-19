@@ -1,19 +1,12 @@
 import Head from "next/head";
-import Image from "next/image";
-import styles from "@/styles/Home.module.css";
-import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { getAuth } from "firebase/auth";
 import { firebaseApp } from "@/firebase";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
-import { useEffect } from "react";
 
 const auth = getAuth(firebaseApp);
 
 export default function Home() {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
-
-  useEffect(() => {
-    console.log({ user, loading, error });
-  }, [user, loading, error]);
 
   return (
     <>
@@ -23,28 +16,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <button onClick={() => signInWithGoogle()}>Sign in</button>
-
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-          <div className={styles.thirteen}>
-            <Image
-              src="/thirteen.svg"
-              alt="13"
-              width={40}
-              height={31}
-              priority
-            />
-          </div>
-        </div>
+      <main>
+        <button className="btn" onClick={() => signInWithGoogle()}>Sign in</button>
       </main>
     </>
   );
