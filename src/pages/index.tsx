@@ -1,13 +1,8 @@
 import Head from "next/head";
 import { getAuth } from "firebase/auth";
 import { firebaseApp } from "@/firebase";
-import { useSignInWithGoogle } from "react-firebase-hooks/auth";
-
-const auth = getAuth(firebaseApp);
 
 export default function Home() {
-  const [signInWithGoogle] = useSignInWithGoogle(auth);
-
   return (
     <>
       <Head>
@@ -16,11 +11,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <button className="btn" onClick={() => signInWithGoogle()}>
-          Sign in with Google
-        </button>
-      </main>
+      <main></main>
     </>
   );
 }

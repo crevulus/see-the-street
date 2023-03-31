@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@googlemaps/js-api-loader": "^1.15.1",
+    "@heroicons/react": "^2.0.17",
     "@next/font": "13.1.6",
     "daisyui": "^2.51.4",
     "firebase": "^9.17.1",
