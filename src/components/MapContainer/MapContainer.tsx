@@ -74,12 +74,12 @@ export function MapContainer({
     );
 
     // iterate over all bounds returned from query
-    const geohashes = bounds.map((bound) => {
+    const geohashes = bounds.map((bounds) => {
       const q = query(
         collection(db, "posts"),
         orderBy("geohash"),
-        startAt(bound[0]),
-        endAt(bound[1])
+        startAt(bounds[0]),
+        endAt(bounds[1])
       );
       return getDocs(q);
     });
